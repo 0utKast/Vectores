@@ -1,4 +1,44 @@
+// construyendo vectores
 #include <iostream>
+#include <vector>
+
+int main()
+{
+    // constructors :
+    std::vector<int> primero;                                // vector vacío de ints
+    std::vector<int> segundo(4, 100);                       // cuatro ints con valor 100
+    std::vector<int> tercero(segundo.begin(), segundo.end());  // iterándose a través segundo
+    std::vector<int> cuarto(tercero);                       // una copia de tercer
+
+    // el constructor iterador puede ser usado también para construir desde arrays:
+    int misints[] = { 16,2,77,29 };
+    std::vector<int> quinto(misints, misints + sizeof(misints) / sizeof(int));
+
+    std::cout << "Los contenidos de quinto son:";
+    for (std::vector<int>::iterator it = quinto.begin(); it != quinto.end(); ++it)
+        std::cout << ' ' << *it;
+    std::cout << '\n';
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -33,4 +73,4 @@ int main() {
     }
 
     return 0;
-}
+}*/
