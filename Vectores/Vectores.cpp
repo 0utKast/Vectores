@@ -1,49 +1,62 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-using namespace std;
+#include <iterator>
 
 int main()
-{
+{   //para poder usar caracteres del español 
 	setlocale(LC_ALL, "es_ES.UTF-8");
+
 	// Un array dinámico de integers
-	vector<int> intArray;
+	std::vector<int> intArray;
+
+	// mostramos el tamaño original del vector intArray
+	std::cout << "tamaño vector = " << intArray.size() << std::endl;
 
 	// Insertar integers de ejemplo en el array
-	intArray.push_back(50);	
-	intArray.push_back(23);
-	intArray.push_back(2991);
-	intArray.push_back(9999);
+	intArray.push_back(62);	
+	intArray.push_back(-31);
+	intArray.push_back(4678);
+	intArray.push_back(10214);
 
-	cout << "Los contenidos del vector son : " << endl;
+	// mostramos el tamaño del vector intArray tras poblarlo con push_back()
+	std::cout << "tamaño vector = " << intArray.size() << std::endl;
+	std::cout << "Los contenidos del vector son : " << std::endl;
 
 	// Moverse por el vector y leer los valores usando un iterador
-	vector<int>::iterator arrIterator = intArray.begin();
+	std::vector<int>::iterator arrIterator = intArray.begin();
 
 	while (arrIterator != intArray.end())
 	{
 		// Escribe el valor en la pantalla
-		cout << *arrIterator << endl;
+		std::cout << *arrIterator << std:: endl;
 
 		// Incrementa el iterador para acceder al siguiente elemento
 		++arrIterator;
 	}
 
-	// Encontrar un elemento (por ejemplo 2991) usando el algoritmo ’find’ 
-	vector<int>::iterator elFound = find(intArray.begin(),
-		intArray.end(), 2991);
+	// Encontrar un elemento (por ejemplo 4678) usando el algoritmo ’find’ 
+	std::vector<int>::iterator elFound = find(intArray.begin(),	intArray.end(), 4678);
 
 	// Comprobar si el valor fue encontrado
 	if (elFound != intArray.end())
 	{
 		// Determinar la posición del elemento usando std::distance
-		int elPos = distance(intArray.begin(), elFound);
-		cout << "Valor " << *elFound;
-		cout << " encontrado en el vector en la posición : " << elPos << endl;
+		int elPos = std::distance(intArray.begin(), elFound);
+		std::cout << "Valor " << *elFound;
+		std::cout << " encontrado en el vector en la posición : " << elPos << std::endl;
 	}
 
 	return 0;
 }
+
+
+
+
+
+
+
+
 
 
 
