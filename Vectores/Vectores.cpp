@@ -24,7 +24,8 @@ int main()
 	std::cout << "Los contenidos del vector son : " << std::endl;
 
 	// Moverse por el vector y leer los valores usando un iterador
-	std::vector<int>::iterator arrIterator = intArray.begin();
+	//std::vector<int>::iterator arrIterator = intArray.begin();
+	auto arrIterator = intArray.begin();
 
 	while (arrIterator != intArray.end())
 	{
@@ -36,7 +37,8 @@ int main()
 	}
 
 	// Encontrar un elemento (por ejemplo 4678) usando el algoritmo ’find’ 
-	std::vector<int>::iterator elFound = find(intArray.begin(),	intArray.end(), 4678);
+	//std::vector<int>::iterator elFound = find(intArray.begin(),	intArray.end(), 4678);
+	auto elFound = find(intArray.begin(), intArray.end(), 4678);
 
 	// Comprobar si el valor fue encontrado
 	if (elFound != intArray.end())
